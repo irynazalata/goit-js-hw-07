@@ -9,5 +9,9 @@ input.addEventListener('blur', (event) => {
   } else {
     input.classList.add('invalid')
   }
-  console.log(event.target.value.length)
+})
+
+input.addEventListener('focus', () => {
+  input.classList.remove('invalid')
+  input.classList.remove('valid')
 })

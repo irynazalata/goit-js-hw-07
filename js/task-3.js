@@ -27,10 +27,12 @@ for (let i = 0; i < images.length; i++) {
   picture.src = `${images[i].url}`
   picture.setAttribute('alt', images[i].alt);
 }
+
 // ------- Variant 2 ---------------------------------
 // const list = document.querySelector('#gallery')
 // for (let i = 0; i < images.length; i++) {
-//   list.insertAdjacentHTML('afterbegin', '<li></li>');
-//   const listItem = document.querySelector('li')
-//   listItem.insertAdjacentHTML('afterbegin', `<img src=${images[i].url} alt=${images[i].alt}>`);
+//   list.insertAdjacentHTML('afterbegin', `<li></li>`);
+//   const image = document.querySelector('#gallery li')
+//   image.insertAdjacentHTML('afterbegin', `<img src=${images[i].url} alt=${images[i].alt}>`);
+//   console.log(images[i].alt)
 // }

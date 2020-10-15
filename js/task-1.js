@@ -1,8 +1,7 @@
 // TASK 1 -----------------------
 
 const listRef = document.querySelectorAll('.item')
-const categoryAmount = listRef.length
-console.log(`У списку ${categoryAmount} категорії.`)
+console.log(`У списку ${listRef.length} категорії.`)
 
 
 const headingRef = document.querySelectorAll('.item > h2')
