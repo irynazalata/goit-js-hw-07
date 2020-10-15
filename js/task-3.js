@@ -18,21 +18,21 @@ const images = [
   },
 ];
 
-const list = document.querySelector('#gallery')
-for (let i = 0; i < images.length; i++) {
-  let listItem = document.createElement('li');
-  let picture = document.createElement('img');
-  list.append(listItem);
-  listItem.append(picture);
-  picture.src = `${images[i].url}`
-  picture.setAttribute('alt', images[i].alt);
-}
-
-// ------- Variant 2 ---------------------------------
 // const list = document.querySelector('#gallery')
 // for (let i = 0; i < images.length; i++) {
-//   list.insertAdjacentHTML('afterbegin', `<li></li>`);
-//   const image = document.querySelector('#gallery li')
-//   image.insertAdjacentHTML('afterbegin', `<img src=${images[i].url} alt=${images[i].alt}>`);
-//   console.log(images[i].alt)
+//   let listItem = document.createElement('li');
+//   let picture = document.createElement('img');
+//   list.append(listItem);
+//   listItem.append(picture);
+//   picture.src = `${images[i].url}`
+//   picture.setAttribute('alt', images[i].alt);
 // }
+
+// ------- Variant 2 ---------------------------------
+const list = document.querySelector('#gallery')
+for (let i = 0; i < images.length; i++) {
+  list.insertAdjacentHTML('beforeend', `<li class=list-item-${i+1}></li>`);
+  const image = document.querySelector(`.list-item-${i+1}`)
+  image.insertAdjacentHTML('afterbegin', `<img src=${images[i].url} alt=${images[i].alt}>`);
+  console.log(images[i].alt)
+}
