@@ -8,6 +8,11 @@
   height: 100%;
 }
 
+#counter {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 #validation-input {
   border: 3px solid #bdbdbd;
 }
@@ -26,4 +31,10 @@
 
 #controls {
   margin-top: 15px;
+}
+
+#boxes {
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }

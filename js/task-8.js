@@ -1,19 +1,38 @@
 // TASK 8 -----------------------
-Напиши скрипт створення і очищення колекції елементів.Користувач вводить кількість елементів в input і натискає кнопку Створити, після чого рендериться колекція.При натисканні на кнопку Очистити, колекція елементів очищається.
 
-Створи функцію createBoxes(amount), яка приймає 1 параметр amount - число. Функція створює стільки div, скільки вказано в amount і додає їх в div#boxes.
+const input = document.querySelector('#controls input');
+const render = document.querySelector('button[data-action="render"]');
+const destroy = document.querySelector('button[data-action="destroy"]');
+const container = document.querySelector('#boxes')
 
-Кожен створений div:
+let amount
 
-Має випадковий rgb колір фону
-Розміри найпершого div - 30px на 30px
-Кожен наступний div після першого, повинен бути ширше і вище попереднього на   10px
-Створи функцію destroyBoxes(), яка очищає div#boxes.
+const createBoxes = function () {
+  let initialWidth = 20;
+  let initialHeight = 20;
+  for (let i = 1; i <= amount; i++) {
+    let random1 = Math.round(Math.random() * 255);
+    let random2 = Math.round(Math.random() * 255);
+    let random3 = Math.round(Math.random() * 255);
+    container.innerHTML += `<div class='box-${i}'></div>`
+    const box = document.querySelector(`.box-${i}`)
+    initialHeight += 10;
+    initialWidth += 10;
+    box.style.width = `${initialWidth}px`;
+    box.style.height = `${initialHeight}px`;
+    box.style.backgroundColor = `rgb(${random1}, ${random2}, ${random3})`
+  }
+}
 
-<div id="controls">
-  <input type="number" min="0" max="100" step="1" />
-  <button type="button" data-action="render">Створити</button>
-  <button type="button" data-action="destroy">Очистити</button>
-</div>
+const destroyBoxes = function () {
+  while (container.firstChild) {
+  container.removeChild(container.firstChild);
+}
+}
 
-<div id="boxes"></div>
+input.addEventListener('input', (event) => {
+  amount = event.target.value;
+})
+
+render.addEventListener('click', createBoxes)
+destroy.addEventListener('click', destroyBoxes)

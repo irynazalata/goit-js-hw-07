@@ -20,7 +20,7 @@ const images = [
 
 const list = document.querySelector('#gallery')
 images.forEach(el => {
-  list.insertAdjacentHTML('beforeend',`<li><img src=${el.url} alt=${el.alt}></li>`)
+  list.insertAdjacentHTML('beforeend',`<li><img src="${el.url}" alt="${el.alt}"></li>`)
 })
 
 // ------- Variant 2 ---------------------------------
