@@ -9,9 +9,10 @@ const ingredients = [
   'Приправи',
 ];
 
-for (let el of ingredients) {
+ingredients.forEach(el => {
   const listItemRef = document.createElement('li')
   const listRef = document.querySelector('#ingredients')
   listItemRef.textContent = el
   listRef.appendChild(listItemRef)
 }
+)

@@ -18,21 +18,20 @@ const images = [
   },
 ];
 
+const list = document.querySelector('#gallery')
+images.forEach(el => {
+  list.insertAdjacentHTML('beforeend',`<li><img src=${el.url} alt=${el.alt}></li>`)
+})
+
+// ------- Variant 2 ---------------------------------
+
 // const list = document.querySelector('#gallery')
-// for (let i = 0; i < images.length; i++) {
+// images.forEach(el => {
 //   let listItem = document.createElement('li');
 //   let picture = document.createElement('img');
 //   list.append(listItem);
 //   listItem.append(picture);
-//   picture.src = `${images[i].url}`
-//   picture.setAttribute('alt', images[i].alt);
+//   picture.src = `${el.url}`
+//   picture.setAttribute('alt', el.alt);
 // }
-
-// ------- Variant 2 ---------------------------------
-const list = document.querySelector('#gallery')
-for (let i = 0; i < images.length; i++) {
-  list.insertAdjacentHTML('beforeend', `<li class=list-item-${i+1}></li>`);
-  const image = document.querySelector(`.list-item-${i+1}`)
-  image.insertAdjacentHTML('afterbegin', `<img src=${images[i].url} alt=${images[i].alt}>`);
-  console.log(images[i].alt)
-}
+// )

@@ -19,3 +19,11 @@
 #validation-input.invalid {
   border-color: #f44336;
 }
+
+#font-size-control {
+  margin-top: 15px;
+}
+
+#controls {
+  margin-top: 15px;
+}
