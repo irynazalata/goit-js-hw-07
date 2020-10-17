@@ -14,3 +14,20 @@ const decrement = function () {
 
 incrementButton.addEventListener('click', increment);
 decrementButton.addEventListener('click', decrement);
+
+// -------------------------- Variant 2 --------------------------------
+// const container = document.querySelector('#counter');
+// const value = document.querySelector('#value');
+
+// container.addEventListener('click', (event) => {
+//   if (event.target.nodeName !== 'BUTTON') return;
+//   switch (event.target.getAttribute('data-action')) {
+//     case 'increment':
+//       value.textContent = +value.textContent + 1;
+//       break;
+
+//     case 'decrement':
+//       value.textContent = +value.textContent - 1;
+//       break;
+//   };
+// });
