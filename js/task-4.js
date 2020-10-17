@@ -20,6 +20,7 @@ decrementButton.addEventListener('click', decrement);
 // const value = document.querySelector('#value');
 
 // container.addEventListener('click', (event) => {
+//   if(event.target.nodeName !== 'BUTTON') return
 //   switch (event.target.getAttribute('data-action')) {
 //     case 'increment':
 //       value.textContent = +value.textContent + 1;
