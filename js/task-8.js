@@ -25,9 +25,7 @@ const createBoxes = function () {
 }
 
 const destroyBoxes = function () {
-  while (container.firstChild) {
-  container.removeChild(container.firstChild);
-}
+  container.innerHTML = '';
 }
 
 input.addEventListener('input', (event) => {
